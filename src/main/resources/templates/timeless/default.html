@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Simple Time Tracker</title>
+	</head>
+	<body>
+		<h1>Time Tracker</h1>
+	<form action="/timetracker" method="post">
+        <label for="week">Week Of:</label>
+        <input type="date" id="date" name="date" value="MM/DD/YYYY" required>
+        <label for="monday">Monday:</label>
+        <input type="number" id="monday" name="hours" value="0" min="0" max="24">
+        <label for="tuesday">Tuesday:</label>
+        <input type="number" id="tuesday" name="hours" value="0" min="0" max="24">
+        <label for="wednesday">Wednesday:</label>
+        <input type="number" id="wednesday" name="hours" value="0" min="0" max="24">
+        <label for="thursday">Thursday:</label>
+        <input type="number" id="thursday" name="hours" value="0" min="0" max="24">
+        <label for="Friday">Friday:</label>
+        <input type="number" id="friday" name="hours" value="0" min="0" max="24">
+        <label for="total">Total:</label>
+        <input type="number" id="total" name="hours" value="0" min="0" max="120">
+        <button name="update" value="update">Update</button>
+        <button name="submit" value="submit">Submit</button>
+    </form>
+    </body>
+</html>
