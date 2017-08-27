@@ -1,5 +1,7 @@
 package com.libertymutual.goforcode.timeless.models;
 
+import java.util.ArrayList;
+
 public class TimeSheet {
 	
     private String date;
@@ -8,7 +10,6 @@ public class TimeSheet {
     private double wednesdayTime;
     private double thursdayTime;
     private double fridayTime;
-    private double total;
     
     public String getDate() {
 		return date;
@@ -58,13 +59,19 @@ public class TimeSheet {
 		this.fridayTime = fridayTime;
 	}
 
-	public double getTotal() {
-		total = mondayTime + tuesdayTime + wednesdayTime + thursdayTime + fridayTime;
-		return total;
+	public double getSum() {
+		return this.mondayTime + this.tuesdayTime + this.wednesdayTime + this.thursdayTime + this.fridayTime;
 	}
 
-	public void setTotal(double total) {
-		this.total = total;
+	public ArrayList<Double> getAllHours()
+	{
+		ArrayList<Double> totalHoursForWeek = new ArrayList<Double>();
+		totalHoursForWeek.add(mondayTime);
+		totalHoursForWeek.add(tuesdayTime);
+		totalHoursForWeek.add(wednesdayTime);
+		totalHoursForWeek.add(thursdayTime);
+		totalHoursForWeek.add(fridayTime);
+		return totalHoursForWeek;
 	}
 	
 }
