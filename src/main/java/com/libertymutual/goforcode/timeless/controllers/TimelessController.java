@@ -49,11 +49,13 @@ public class TimelessController {
         mv.addObject("hasTimeItemListOfHours", !item.isEmpty());
 		mv.addObject("date", date);
 		mv.addObject("sum", sum);
-		mv.addObject("monday", hours.get(0));
-		mv.addObject("tuesday", hours.get(1));
-		mv.addObject("wednesday", hours.get(2));
-		mv.addObject("thursday", hours.get(3));
-		mv.addObject("friday", hours.get(4));
+		mv.addObject("sunday", hours.get(0));
+		mv.addObject("monday", hours.get(1));
+		mv.addObject("tuesday", hours.get(2));
+		mv.addObject("wednesday", hours.get(3));
+		mv.addObject("thursday", hours.get(4));
+		mv.addObject("friday", hours.get(5));
+		mv.addObject("saturday", hours.get(6));
 		return mv;
 	}
 	
@@ -78,6 +80,8 @@ public class TimelessController {
 			hours.set(2, 0.0);
 			hours.set(3, 0.0);
 			hours.set(4, 0.0);
+			hours.set(5, 0.0);
+			hours.set(6, 0.0);
 			return mv;
 		}
     }

@@ -31,11 +31,13 @@ public class TimeSheetRepository {
 			
 			 ArrayList<String> weekEntry = new ArrayList<String>();
 			 weekEntry.add(item.getDate());
+			 weekEntry.add(Double.toString(item.getSundayTime()));
 			 weekEntry.add(Double.toString(item.getMondayTime()));
 			 weekEntry.add(Double.toString(item.getTuesdayTime()));
 			 weekEntry.add(Double.toString(item.getWednesdayTime()));
 			 weekEntry.add(Double.toString(item.getThursdayTime()));
 			 weekEntry.add(Double.toString(item.getFridayTime()));
+			 weekEntry.add(Double.toString(item.getSaturdayTime()));
 			 weekEntry.add(Double.toString(item.getSum()));
 			 
 			 printer.printRecord(weekEntry);
@@ -57,11 +59,13 @@ public class TimeSheetRepository {
 			for (CSVRecord current : record) {
 				item = new TimeSheet();
 				item.setDate(current.get(0));
-				item.setMondayTime(Double.valueOf(current.get(1)));
-				item.setTuesdayTime(Double.valueOf(current.get(2)));
-				item.setWednesdayTime(Double.valueOf(current.get(3)));
-				item.setThursdayTime(Double.valueOf(current.get(4)));
-				item.setFridayTime(Double.valueOf(current.get(5)));
+				item.setSundayTime(Double.valueOf(current.get(1)));
+				item.setMondayTime(Double.valueOf(current.get(2)));
+				item.setTuesdayTime(Double.valueOf(current.get(3)));
+				item.setWednesdayTime(Double.valueOf(current.get(4)));
+				item.setThursdayTime(Double.valueOf(current.get(5)));
+				item.setFridayTime(Double.valueOf(current.get(6)));
+				item.setSaturdayTime(Double.valueOf(current.get(7)));
 			}
 			return item;
 			
@@ -69,21 +73,25 @@ public class TimeSheetRepository {
         	System.err.println("Could not find file");
         	TimeSheet item = new TimeSheet();
 			item.setDate("mm/dd/yyyy");
+			item.setSundayTime(0.0);
 			item.setMondayTime(0.0);
 			item.setTuesdayTime(0.0);
 			item.setWednesdayTime(0.0);
 			item.setThursdayTime(0.0);
 			item.setFridayTime(0.0);
+			item.setSaturdayTime(0.0);
 			return item;
 		} catch (IOException e) {
 			System.err.println("Could not read file");
 			TimeSheet item = new TimeSheet();
 			item.setDate("mm/dd/yyyy");
+			item.setSundayTime(0.0);
 			item.setMondayTime(0.0);
 			item.setTuesdayTime(0.0);
 			item.setWednesdayTime(0.0);
 			item.setThursdayTime(0.0);
 			item.setFridayTime(0.0);
+			item.setSaturdayTime(0.0);
 			return item;
 		}
 	}
@@ -95,11 +103,13 @@ public class TimeSheetRepository {
 			
 			 ArrayList<String> weekEntry = new ArrayList<String>();
 			 weekEntry.add(item.getDate());
+			 weekEntry.add(Double.toString(item.getSundayTime()));
 			 weekEntry.add(Double.toString(item.getMondayTime()));
 			 weekEntry.add(Double.toString(item.getTuesdayTime()));
 			 weekEntry.add(Double.toString(item.getWednesdayTime()));
 			 weekEntry.add(Double.toString(item.getThursdayTime()));
 			 weekEntry.add(Double.toString(item.getFridayTime()));
+			 weekEntry.add(Double.toString(item.getSaturdayTime()));
 			 weekEntry.add(Double.toString(item.getSum()));
 			 
 			 printer.printRecord(weekEntry);
@@ -121,11 +131,13 @@ public class TimeSheetRepository {
 			for (CSVRecord current : record) {
 				TimeSheet item = new TimeSheet();
 				item.setDate(current.get(0));
-				item.setMondayTime(Double.valueOf(current.get(1)));
-				item.setTuesdayTime(Double.valueOf(current.get(2)));
-				item.setWednesdayTime(Double.valueOf(current.get(3)));
-				item.setThursdayTime(Double.valueOf(current.get(4)));
-				item.setFridayTime(Double.valueOf(current.get(5)));
+				item.setSundayTime(Double.valueOf(current.get(1)));
+				item.setMondayTime(Double.valueOf(current.get(2)));
+				item.setTuesdayTime(Double.valueOf(current.get(3)));
+				item.setWednesdayTime(Double.valueOf(current.get(4)));
+				item.setThursdayTime(Double.valueOf(current.get(5)));
+				item.setFridayTime(Double.valueOf(current.get(6)));
+				item.setSaturdayTime(Double.valueOf(current.get(7)));
 				reverse.add(item);
 			}
 			reverse = reverser(reverse);

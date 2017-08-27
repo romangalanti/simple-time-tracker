@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class TimeSheet {
 	
     private String date;
+    private double sundayTime;
     private double mondayTime;
     private double tuesdayTime;
     private double wednesdayTime;
     private double thursdayTime;
     private double fridayTime;
+    private double saturdayTime;
     
     public String getDate() {
 		return date;
@@ -60,18 +62,36 @@ public class TimeSheet {
 	}
 
 	public double getSum() {
-		return this.mondayTime + this.tuesdayTime + this.wednesdayTime + this.thursdayTime + this.fridayTime;
+		return this.sundayTime + this.mondayTime + this.tuesdayTime + this.wednesdayTime + this.thursdayTime + this.fridayTime + this.saturdayTime;
 	}
 
 	public ArrayList<Double> getAllHours()
 	{
 		ArrayList<Double> totalHoursForWeek = new ArrayList<Double>();
+		totalHoursForWeek.add(sundayTime);
 		totalHoursForWeek.add(mondayTime);
 		totalHoursForWeek.add(tuesdayTime);
 		totalHoursForWeek.add(wednesdayTime);
 		totalHoursForWeek.add(thursdayTime);
 		totalHoursForWeek.add(fridayTime);
+		totalHoursForWeek.add(saturdayTime);
 		return totalHoursForWeek;
+	}
+
+	public double getSundayTime() {
+		return sundayTime;
+	}
+
+	public void setSundayTime(double sundayTime) {
+		this.sundayTime = sundayTime;
+	}
+
+	public double getSaturdayTime() {
+		return saturdayTime;
+	}
+
+	public void setSaturdayTime(double saturdayTime) {
+		this.saturdayTime = saturdayTime;
 	}
 	
 }

@@ -10,22 +10,26 @@
     	<thead>
       		<tr>
        			<th>Week Of</th>
+       			<th>Sunday</th>
         		<th>Monday</th>
         		<th>Tuesday</th>
         		<th>Wednesday</th>
         		<th>Thursday</th>
         		<th>Friday</th>
+        		<th>Saturday</th>
         		<th>Total</th>
       		</tr>
     	</thead>    
     	<tbody>    
     		<tr>
         		<td><input autofocus placeholder="mm/dd/yyyy" required value="{{ date }}" name="date" type="date"></td>
+        		<td><input value="{{ sunday }}" name="sundayTime" type="number" min="0" max="24" step="any"></td>
           		<td><input value="{{ monday }}" name="mondayTime" type="number" min="0" max="24" step="any"></td>
           		<td><input value="{{ tuesday }}" name="tuesdayTime" type="number" min="0" max="24" step="any"></td>
           		<td><input value="{{ wednesday }}" name="wednesdayTime" type="number" min="0" max="24" step="any"></td>
           		<td><input value="{{ thursday }}" name="thursdayTime" type="number" min="0" max="24" step="any"></td>
           		<td><input value="{{ friday }}" name="fridayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input value="{{ saturday }}" name="saturdayTime" type="number" min="0" max="24" step="any"></td>
           		<td>{{#sum}}{{ . }}{{/sum}}</td>
       		</tr>    
     	</tbody>
@@ -41,11 +45,13 @@
     	<thead>
       		<tr>
         		<th>Week Of</th>
+        		<th>Sunday</th>
         		<th>Monday</th>
        			<th>Tuesday</th>
         		<th>Wednesday</th>
         		<th>Thursday</th>
         		<th>Friday</th>
+        		<th>Saturday</th>
        			<th>Total</th>
       		</tr>
     	</thead>
@@ -54,11 +60,13 @@
     		{{#timeItemList}}
       			<tr>
         			<td>{{ date }}</td>
+        			<td>{{ sundayTime }}</td>
           			<td>{{ mondayTime }}</td>
           			<td>{{ tuesdayTime }}</td>
           			<td>{{ wednesdayTime }}</td>
           			<td>{{ thursdayTime }}</td>
           			<td>{{ fridayTime }}</td>
+          			<td>{{ saturdayTime }}</td>
         			<td>{{ sum }}</td>
       			</tr>
     		{{/timeItemList}}
