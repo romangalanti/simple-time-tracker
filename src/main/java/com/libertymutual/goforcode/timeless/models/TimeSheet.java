@@ -65,8 +65,7 @@ public class TimeSheet {
 		return this.sundayTime + this.mondayTime + this.tuesdayTime + this.wednesdayTime + this.thursdayTime + this.fridayTime + this.saturdayTime;
 	}
 
-	public ArrayList<Double> getAllHours()
-	{
+	public ArrayList<Double> getAllHours() {
 		ArrayList<Double> totalHoursForWeek = new ArrayList<Double>();
 		totalHoursForWeek.add(sundayTime);
 		totalHoursForWeek.add(mondayTime);
