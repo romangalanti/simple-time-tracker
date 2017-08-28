@@ -71,28 +71,10 @@ public class TimeSheetRepository {
 			
 		} catch (FileNotFoundException e) {
         	System.err.println("Could not find file");
-        	TimeSheet item = new TimeSheet();
-			item.setDate("mm/dd/yyyy");
-			item.setSundayTime(0.0);
-			item.setMondayTime(0.0);
-			item.setTuesdayTime(0.0);
-			item.setWednesdayTime(0.0);
-			item.setThursdayTime(0.0);
-			item.setFridayTime(0.0);
-			item.setSaturdayTime(0.0);
-			return item;
+        	return null;
 		} catch (IOException e) {
 			System.err.println("Could not read file");
-			TimeSheet item = new TimeSheet();
-			item.setDate("mm/dd/yyyy");
-			item.setSundayTime(0.0);
-			item.setMondayTime(0.0);
-			item.setTuesdayTime(0.0);
-			item.setWednesdayTime(0.0);
-			item.setThursdayTime(0.0);
-			item.setFridayTime(0.0);
-			item.setSaturdayTime(0.0);
-			return item;
+			return null;
 		}
 	}
 	
@@ -140,7 +122,7 @@ public class TimeSheetRepository {
 				item.setSaturdayTime(Double.valueOf(current.get(7)));
 				reverse.add(item);
 			}
-			reverse = reverser(reverse);
+			reverse = reverseCollection(reverse);
 			return reverse;
 			
 		} catch (FileNotFoundException e) {
@@ -152,7 +134,7 @@ public class TimeSheetRepository {
 		}
 	}
 	
-	private ArrayList<TimeSheet> reverser(List<TimeSheet> reverse) {
+	private ArrayList<TimeSheet> reverseCollection(List<TimeSheet> reverse) {
 		ArrayList<TimeSheet> reversedList = new ArrayList<TimeSheet>();
 		
 		for (int i = (reverse.size()-1); i >= 0; i--) {
