@@ -72,15 +72,15 @@ public class TimeSheetRepository {
 		} catch (FileNotFoundException e) {
         	System.err.println("Could not find file");
         	TimeSheet item = new TimeSheet();
-        	 item.setDate("mm/dd/yyyy");
-        	 item.setSundayTime(0.0);
-        	 item.setMondayTime(0.0);
-        	 item.setTuesdayTime(0.0);
-        	 item.setWednesdayTime(0.0);
-        	 item.setThursdayTime(0.0);
-        	 item.setFridayTime(0.0);
-        	 item.setSaturdayTime(0.0);
-        	 return item;
+        	item.setDate("mm/dd/yyyy");
+        	item.setSundayTime(0.0);
+        	item.setMondayTime(0.0);
+        	item.setTuesdayTime(0.0);
+        	item.setWednesdayTime(0.0);
+        	item.setThursdayTime(0.0);
+        	item.setFridayTime(0.0);
+        	item.setSaturdayTime(0.0);
+        	return item;
 		} catch (IOException e) {
 			System.err.println("Could not read file");
 			TimeSheet item = new TimeSheet();
