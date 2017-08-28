@@ -24,8 +24,8 @@ public class TimeSheetRepository {
 
 	}
 
-	public void writeTempWeekToFile(TimeSheet item) {
-		try (FileWriter writer = new FileWriter("timesheettemp.csv");
+	public void writeUpdateWeekToFile(TimeSheet item) {
+		try (FileWriter writer = new FileWriter("updatetimesheet.csv");
 	         BufferedWriter buff = new BufferedWriter(writer);
 	         CSVPrinter printer = new CSVPrinter(buff, CSVFormat.DEFAULT)) {
 			
@@ -49,8 +49,8 @@ public class TimeSheetRepository {
    		} 
 	}
 	
-	public TimeSheet getTempFileOfWeeks() {
-		 	try (FileReader reader = new FileReader("timesheettemp.csv");
+	public TimeSheet getUpdateFile() {
+		 	try (FileReader reader = new FileReader("updatetimesheet.csv");
 	        BufferedReader buffy = new BufferedReader(reader)) {
 			
 			Iterable<CSVRecord> record = CSVFormat.DEFAULT.parse(buffy);

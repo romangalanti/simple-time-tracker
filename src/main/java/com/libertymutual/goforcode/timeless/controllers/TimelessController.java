@@ -36,7 +36,7 @@ public class TimelessController {
 		ModelAndView mv = new ModelAndView("timeless/default");
 		List<TimeSheet> item = new ArrayList<TimeSheet>();        
 		TimeSheet week = new TimeSheet();
-		week = repository.getTempFileOfWeeks();
+		week = repository.getUpdateFile();
 		
 		if (buttonChoice == "update") {
 			hours = week.getAllHours();
@@ -64,7 +64,7 @@ public class TimelessController {
 		ModelAndView mv = new ModelAndView("redirect:/timetracker");
 		if (button.equals("update")) {
 			buttonChoice = "update";
-			repository.writeTempWeekToFile(item);
+			repository.writeUpdateWeekToFile(item);
 			date = item.getDate();
 			sum = item.getSum();
 			hours = item.getAllHours();
