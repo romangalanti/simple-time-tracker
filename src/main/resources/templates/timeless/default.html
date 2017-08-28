@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<title>Simple Time Tracker</title>
+		<link rel = "stylesheet"  href ="/webjars/purecss/1.0.0/build/pure-min.css">
 	</head>
 	<body>
 		<h1>Time Tracker</h1>
-	<form action="/timetracker" method="post">
-        <table>
+	<form class="pure-form" action="/timetracker" method="post">
+        <table class="pure-table pure-table-bordered">
     	<thead>
       		<tr>
        			<th>Week Of</th>
@@ -22,26 +23,26 @@
     	</thead>    
     	<tbody>    
     		<tr>
-        		<td><input autofocus placeholder="mm/dd/yyyy" required value="{{ date }}" name="date" type="date"></td>
-        		<td><input value="{{ sunday }}" name="sundayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ monday }}" name="mondayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ tuesday }}" name="tuesdayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ wednesday }}" name="wednesdayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ thursday }}" name="thursdayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ friday }}" name="fridayTime" type="number" min="0" max="24" step="any"></td>
-          		<td><input value="{{ saturday }}" name="saturdayTime" type="number" min="0" max="24" step="any"></td>
+        		<td><input autofocus class="pure-input" placeholder="mm/dd/yyyy" required value="{{ date }}" name="date" type="date"></td>
+        		<td><input class="pure-input" value="{{ sunday }}" name="sundayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ monday }}" name="mondayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ tuesday }}" name="tuesdayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ wednesday }}" name="wednesdayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ thursday }}" name="thursdayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ friday }}" name="fridayTime" type="number" min="0" max="24" step="any"></td>
+          		<td><input class="pure-input" value="{{ saturday }}" name="saturdayTime" type="number" min="0" max="24" step="any"></td>
           		<td>{{#sum}}{{ . }}{{/sum}}</td>
       		</tr>    
     	</tbody>
   		</table>
   		<br>
-  		<button name="button" value="update">Update</button>
-  		<button name="button" value="submit">Submit</button>
+  		<button class="pure-button" name="button" value="update">Update</button>
+  		<button class="pure-button" name="button" value="submit">Submit</button>
   		<br>
     </form>
     <br>
     <hr>
-    <table>
+    <table class="pure-table pure-table-bordered">
     	<thead>
       		<tr>
         		<th>Week Of</th>
